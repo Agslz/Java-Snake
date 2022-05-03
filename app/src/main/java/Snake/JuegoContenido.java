@@ -129,7 +129,7 @@ public final class JuegoContenido extends JPanel implements ActionListener {
 
     public class Controles extends KeyAdapter {
 
-        @Override //Sobreescribimos el metodo
+        @Override
         public void keyPressed(KeyEvent e) {
             switch (e.getKeyCode()) { //Nos movemos con las flechas del teclado en codigo ASCII
                 case 38 -> direccion = 'w';
