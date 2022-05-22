@@ -13,24 +13,24 @@ import javax.swing.Timer;
 
 public final class JuegoContenido extends JPanel implements ActionListener {
 
-    //Pantalla
+    //Screen
     static final int PANTALLA = 600;
     static final int CUADRITO_SIZE = 25;
     static final int CUADR0S_EN_PARALELO = (int) PANTALLA / CUADRITO_SIZE;
-    //Serpiente
+    //Snake
     static final int TOTAL_CUERPO_SERPIENTE = (PANTALLA * PANTALLA) / CUADRITO_SIZE;
     int[] serpienteX = new int[TOTAL_CUERPO_SERPIENTE];
     int[] serpienteY = new int[TOTAL_CUERPO_SERPIENTE];
     int cuerpo_serpiente = 3;
     char direccion = 'd'; //awsd
-    //Comida
+    //Food
     int comidaX;
     int comidaY;
     //Timer
     boolean running = true;
     static final int DELAY = 100;
     Timer timer;
-    //Otros
+    //Others
     Random random = new Random();
 
     public JuegoContenido() {
@@ -71,9 +71,7 @@ public final class JuegoContenido extends JPanel implements ActionListener {
                 serpienteY[0] = serpienteY[0] - CUADRITO_SIZE;
             case 's' ->
                 serpienteY[0] = serpienteY[0] + CUADRITO_SIZE;
-
         }
-
     }
 
     public void checarComida() {
@@ -81,7 +79,6 @@ public final class JuegoContenido extends JPanel implements ActionListener {
             cuerpo_serpiente++;
             agregarComida();
         }
-
     }
 
     public void checarChoques() {
@@ -97,13 +94,12 @@ public final class JuegoContenido extends JPanel implements ActionListener {
         if (serpienteY[0] > PANTALLA - CUADRITO_SIZE) {
             running = false;
         }
-
     }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        //Dibuja una cruadicula
+        //Draw a grid
         /*   for (int i = 0; i < CUADR0S_EN_PARALELO; i++) {
             g.drawLine(0, CUADRITO_SIZE * i, PANTALLA, CUADRITO_SIZE * i);
             g.drawLine(CUADRITO_SIZE * i, 0, CUADRITO_SIZE * i, PANTALLA);
@@ -131,16 +127,12 @@ public final class JuegoContenido extends JPanel implements ActionListener {
 
         @Override
         public void keyPressed(KeyEvent e) {
-            switch (e.getKeyCode()) { //Nos movemos con las flechas del teclado en codigo ASCII
+            switch (e.getKeyCode()) { //We move with the keyboard arrows in ASCII code
                 case 38 -> direccion = 'w';
                 case 40 -> direccion = 's';
                 case 37 -> direccion = 'a';
                 case 39 -> direccion = 'd';
-
             }
-
         }
-
     }
-
 }
