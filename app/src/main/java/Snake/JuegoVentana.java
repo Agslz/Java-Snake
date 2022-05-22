@@ -12,7 +12,5 @@ public class JuegoVentana extends JFrame {
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
-
     }
-
 }
