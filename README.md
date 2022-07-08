@@ -1,7 +1,5 @@
 # Java Snake 🐍
 
-The legendary snake game
-
 ![Snake Screen](screenshots/Screenshot1.png) 
 
 ## Getting Started
